@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Custom theme variables for Tailwind v4 */
+@theme {
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #0F766E;
+  --color-primary-600: #0d5f58;
+  --color-primary-700: #0b4d47;
+  --color-primary-800: #083b36;
+  --color-primary-900: #062925;
+  --color-amber-400: #F59E0B;
+  --color-amber-500: #D97706;
+  --color-coral: #EF4444;
+  --color-green: #22C55E;
+  --color-background: #F9FAFB;
+  
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    color: #1F2937;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .btn-primary {
+    background-color: var(--color-primary-500);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-600);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: var(--color-primary-600);
+    padding: 0.75rem 1.5rem;
+    border-radius: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E5E7EB;
+  }
+  .btn-secondary:hover {
+    background-color: #F9FAFB;
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-amber {
+    background-color: var(--color-amber-400);
+    color: var(--color-primary-900);
+    padding: 0.75rem 2rem;
+    border-radius: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+  }
+  .btn-amber:hover {
+    background-color: var(--color-amber-500);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.4);
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+  }
+  .input-field:focus {
+    outline: none;
+    ring: 2px solid var(--color-primary-500);
+    border-color: transparent;
+  }
+}
