@@ -8,6 +8,8 @@ import PostItem from './pages/PostItem'
 import Chat from './pages/Chat'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Profile from './pages/Profile'
+import PublicProfile from './pages/PublicProfile'  // ✅ ADD THIS
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth()
@@ -21,11 +23,17 @@ function App() {
       <AuthProvider>
         <Navbar />
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/item/:id" element={<ItemDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          
+          {/* ✅ PUBLIC PROFILE - Anyone can view */}
+          <Route path="/profile/:userId" element={<PublicProfile />} />
+
+          {/* Protected Routes */}
           <Route path="/post" element={
             <PrivateRoute>
               <PostItem />
@@ -34,6 +42,11 @@ function App() {
           <Route path="/chat" element={
             <PrivateRoute>
               <Chat />
+            </PrivateRoute>
+          } />
+          <Route path="/profile" element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           } />
         </Routes>

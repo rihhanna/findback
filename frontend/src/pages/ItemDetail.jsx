@@ -802,8 +802,9 @@ export default function ItemDetail() {
                     >
                       Posted by
                     </p>
-
+                    <link>
                     <p
+                    to={`/profile/${item.user_id}`}
                       className="
                         text-sm
                         font-semibold
@@ -813,7 +814,7 @@ export default function ItemDetail() {
                       {item.profiles?.name ||
                         'Anonymous'}
                     </p>
-
+                   </link>
                   </div>
 
                 </div>

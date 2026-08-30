@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../services/supabase'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Browse() {
+  const navigate = useNavigate()
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -26,7 +27,7 @@ export default function Browse() {
       .from('items')
       .select(`
         *,
-        profiles:user_id (name, avatar_url)
+        profiles:user_id (id, name, avatar_url)
       `)
       .eq('status', 'active')
       .order('created_at', { ascending: false })
@@ -118,8 +119,8 @@ export default function Browse() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {items.map(item => (
-              <Link to={`/item/${item.id}`} key={item.id}>
-                <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+              <div key={item.id} className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
+                <Link to={`/item/${item.id}`}>
                   {item.photo_urls && item.photo_urls.length > 0 && (
                     <img
                       src={item.photo_urls[0]}
@@ -127,27 +128,43 @@ export default function Browse() {
                       className="w-full h-48 object-cover"
                     />
                   )}
-                  <div className="p-4">
-                    <div className="flex items-start justify-between">
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        item.type === 'lost' 
-                          ? 'bg-red-100 text-red-600' 
-                          : 'bg-green-100 text-green-600'
-                      }`}>
-                        {item.type === 'lost' ? '🔴 Lost' : '🟢 Found'}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        {item.category}
-                      </span>
-                    </div>
-                    <h3 className="font-semibold text-lg mt-2 truncate">{item.title}</h3>
-                    <p className="text-gray-600 text-sm truncate">{item.location}</p>
-                    <p className="text-gray-400 text-xs mt-2">
-                      {new Date(item.created_at).toLocaleDateString()}
-                    </p>
+                </Link>
+                <div className="p-4">
+                  <div className="flex items-start justify-between">
+                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                      item.type === 'lost' 
+                        ? 'bg-red-100 text-red-600' 
+                        : 'bg-green-100 text-green-600'
+                    }`}>
+                      {item.type === 'lost' ? '🔴 Lost' : '🟢 Found'}
+                    </span>
+                    <span className="text-sm text-gray-500">
+                      {item.category}
+                    </span>
                   </div>
+                  
+                  <Link to={`/item/${item.id}`}>
+                    <h3 className="font-semibold text-lg mt-2 truncate hover:text-primary-500 transition">
+                      {item.title}
+                    </h3>
+                  </Link>
+                  
+                  <p className="text-gray-600 text-sm truncate">{item.location}</p>
+                  
+                  {/* Posted by - Clickable to profile */}
+                  <p className="text-gray-400 text-xs mt-2 flex items-center gap-1">
+                    <span>Posted by</span>
+                    <span 
+                      onClick={() => navigate(`/profile/${item.user_id}`)}
+                      className="text-primary-500 hover:underline font-medium cursor-pointer"
+                    >
+                      {item.profiles?.name || 'Anonymous'}
+                    </span>
+                    <span className="mx-1">•</span>
+                    <span>{new Date(item.created_at).toLocaleDateString()}</span>
+                  </p>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         )}

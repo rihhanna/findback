@@ -266,9 +266,15 @@ export default function Home() {
 
                     {/* Posted by */}
                     <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-xs text-gray-400 flex items-center gap-1">
-                        <span>👤</span> {item.profiles?.name || 'Anonymous'}
-                      </span>
+                      <span className="flex items-center gap-1">
+  <span>👤</span>
+  <Link 
+    to={`/profile/${item.user_id}`}
+    className="hover:text-primary-500 hover:underline transition"
+  >
+    {item.profiles?.name || 'Anonymous'}
+  </Link>
+</span>
                       <span className="text-xs text-primary-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                         View details →
                       </span>
