@@ -802,19 +802,19 @@ export default function ItemDetail() {
                     >
                       Posted by
                     </p>
-                    <link>
-                    <p
-                    to={`/profile/${item.user_id}`}
-                      className="
-                        text-sm
-                        font-semibold
-                        text-gray-900
-                      "
-                    >
-                      {item.profiles?.name ||
-                        'Anonymous'}
-                    </p>
-                   </link>
+                    <Link
+      to={`/profile/${item.user_id}`}
+      className="
+        text-sm
+        font-semibold
+        text-gray-900
+        hover:text-primary-500
+        hover:underline
+        transition
+      "
+    >
+      {item.profiles?.name || 'Anonymous'}
+    </Link>
                   </div>
 
                 </div>
