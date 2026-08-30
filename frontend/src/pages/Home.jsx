@@ -259,7 +259,7 @@ export default function Home() {
                 <Link to="/profile" className="text-gray-600 hover:text-primary-500 transition">Profile</Link>
               )}
             </div>
-            <div className="text-sm text-gray-400">Powered by <span className="text-primary-500 font-medium">Rehana</span> 🚀</div>
+            <div className="text-sm text-gray-400">Powered by <span className="text-primary-500 font-medium">Rehana Hassan </span>  </div>
           </div>
           <div className="border-t border-gray-100 mt-6 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
             <span>© {new Date().getFullYear()} FindBack. All rights reserved.</span>
