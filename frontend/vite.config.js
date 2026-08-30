@@ -2,10 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),  // This replaces the PostCSS approach in v4
+    tailwindcss(),
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
+  publicDir: 'public',  // ✅ Make sure this is set
 })

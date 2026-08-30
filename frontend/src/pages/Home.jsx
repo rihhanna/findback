@@ -264,9 +264,9 @@ export default function Home() {
           <div className="border-t border-gray-100 mt-6 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
             <span>© {new Date().getFullYear()} FindBack. All rights reserved.</span>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary-500 transition">Privacy</a>
-              <a href="#" className="hover:text-primary-500 transition">Terms</a>
-              <a href="#" className="hover:text-primary-500 transition">Contact</a>
+              <Link to="/privacy" className="hover:text-primary-500 transition">Privacy</Link>
+              <Link to="/terms" className="hover:text-primary-500 transition">Terms</Link>
+              <Link to="/contact" className="hover:text-primary-500 transition">Contact</Link>
             </div>
           </div>
         </div>

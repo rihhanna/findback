@@ -11,6 +11,9 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
 import PublicProfile from './pages/PublicProfile'
+import Privacy from './pages/Privacy'      // ✅ NEW
+import Terms from './pages/Terms'          // ✅ NEW
+import Contact from './pages/Contact'      // ✅ NEW
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth()
@@ -32,6 +35,11 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile/:userId" element={<PublicProfile />} />
+            
+            {/* ✅ New Pages */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* Protected Routes */}
             <Route path="/post" element={
