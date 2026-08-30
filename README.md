@@ -21,11 +21,11 @@ Built with **React, FastAPI, Supabase, and Tailwind CSS**.
 
 | Home Page                                                        | Item Detail                                                          |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------- |
-| ![Home Page](./frontend/screenshots/home.png) | ![Item Detail](https://via.placeholder.com/600x350?text=Item+Detail) |
+| ![Home Page](./frontend/screenshots/home.png) | ![Item Detail](./frontend/screenshots/item-detail.png) |
 
 | Chat                                                   | Public Profile                                                      |
 | ------------------------------------------------------ | ------------------------------------------------------------------- |
-| ![Chat](https://via.placeholder.com/600x350?text=Chat) | ![Profile](https://via.placeholder.com/600x350?text=Public+Profile) |
+| ![Chat](./frontend/screenshots/chat.png) | ![Profile](./frontend/screenshots/profile.png) |
 
 ---
 
