@@ -1,4 +1,3 @@
-
 ```markdown
 # 🏷️ FindBack — Community Lost & Found Platform
 
@@ -92,7 +91,6 @@
 
 ## 📁 Project Structure
 
-```
 findback/
 ├── frontend/                 # React + Vite
 │   ├── src/
@@ -150,8 +148,6 @@ messages.item_id → items.id
 messages.sender_id → profiles.id
 messages.receiver_id → profiles.id
 ```
-
----
 
 ## 🚀 Installation & Setup
 
