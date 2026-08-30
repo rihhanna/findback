@@ -349,7 +349,5 @@ For support, email hrihhana@gmail.com or open an issue on GitHub.
 **"I don't just study AI and Machine Learning. I build with it."** 🚀
 
 ---
-
 Made with ❤️ by Rehana Hassan
-```
 
