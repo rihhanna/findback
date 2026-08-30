@@ -21,7 +21,7 @@ Built with **React, FastAPI, Supabase, and Tailwind CSS**.
 
 | Home Page                                                        | Item Detail                                                          |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------- |
-| ![Home Page](https://via.placeholder.com/600x350?text=Home+Page) | ![Item Detail](https://via.placeholder.com/600x350?text=Item+Detail) |
+| ![Home Page](./frontend/screenshots/home.png) | ![Item Detail](https://via.placeholder.com/600x350?text=Item+Detail) |
 
 | Chat                                                   | Public Profile                                                      |
 | ------------------------------------------------------ | ------------------------------------------------------------------- |
